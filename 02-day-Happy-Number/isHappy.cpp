@@ -7,9 +7,8 @@ int next_n(int n)
     int sum = 0;
     while (n > 0)
     {
-        int mod = n % 10;
+        sum += (n % 10) * (n % 10);
         n = n / 10;
-        sum += mod * mod;
     }
     return sum;
 }
@@ -28,7 +27,6 @@ bool isHappy(int n)
 
 int main(int argc, char const *argv[])
 {
-    /* code */
     std::cout << "is happy number: " << isHappy(19) << std::endl;
     return 0;
 }
