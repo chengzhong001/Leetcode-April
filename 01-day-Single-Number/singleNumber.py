@@ -1,8 +1,4 @@
 def singleNumber(nums: list[int]) -> int:
-    """
-    :type nums: list[int]
-    :rtype: int
-    """
     n = nums[0]
     for i in range(1, len(nums)):
         n = n ^ nums[i]

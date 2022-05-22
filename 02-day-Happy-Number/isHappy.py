@@ -1,4 +1,4 @@
-def next_n(n):
+def next_n(n: int) -> int:
     sum = 0
     while n > 0:
         sum += (n % 10) ** 2
@@ -6,7 +6,7 @@ def next_n(n):
     return sum
 
 
-def isHappy(n):
+def isHappy(n: int) -> bool:
     slow, fast = next_n(n), next_n(next_n(n))
     while slow != fast:
         slow, fast = next_n(slow), next_n(next_n(fast))
