@@ -17,10 +17,8 @@ int maxSubArray(int *nums, int numsSize)
             sum += nums[j];
             if(sum > max)
                 max = sum;
-      
         }
     }
-    
     return max;
 }
 
