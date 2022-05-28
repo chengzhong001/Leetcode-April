@@ -6,7 +6,7 @@ A happy number is a number defined by the following progress: Starting wiht an p
 
 **Example:**
 
-```
+```text
 Input: 19
 Output: true
 Explanation:
