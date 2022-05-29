@@ -10,7 +10,7 @@ function traverse_dir() {
             continue
         elif [ -d "$abs_path" ]; then
             echo "$abs_path"
-            traverse_dir "$abs_path"
+            traverse_dir "$abs_path" 
         else
             echo "$abs_path"
         fi

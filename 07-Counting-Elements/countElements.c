@@ -38,7 +38,7 @@
 
 int cmp(const void *a, const void *b)
 {
-    return *(const int *)a - *(const int *)b;
+    return *(const int *)a > *(const int *)b;
 }
 
 int countElements(int *arr, int arrSize)
@@ -47,21 +47,22 @@ int countElements(int *arr, int arrSize)
     // sorted_arr {0, 1, 2, 3, 3, 5}
     //     number {1, 1, 1, 1, 1, 1}
     //      count {1, 1, 1, 0, 0, 0}
-    int count = 0; 
+    int count = 0;
     int number = 1;
     qsort(arr, arrSize, sizeof(int), cmp);
     for (int i = 1; i < arrSize; i++)
     {
-        if(arr[i] != arr[i-1]){
-            if(arr[i]==arr[i-1]+1)
+        if (arr[i] != arr[i - 1])
+        {
+            if (arr[i] == arr[i - 1] + 1)
                 count += number;
             number = 1;
         }
-        else{
+        else
+        {
             number++;
         }
     }
-    
 
     return count;
 }
