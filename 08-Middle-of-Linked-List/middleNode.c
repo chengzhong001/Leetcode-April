@@ -7,19 +7,30 @@ struct ListNode
     struct ListNode *next;
 };
 
+// struct ListNode *middleNode(struct ListNode *head)
+// {
+//     int length = 0;
+//     for (struct ListNode *cur = head; cur != NULL; cur = cur->next)
+//     {
+//         length++;
+//     }
+//     struct ListNode *result = head;
+//     for (int i = 0; i < length / 2; i++)
+//     {
+//         result = result->next;
+//     }
+//     return result;
+// };
+
 struct ListNode *middleNode(struct ListNode *head)
 {
-    int length = 0;
-    for (struct ListNode *cur = head; cur != NULL; cur = cur->next)
-    {
-        length++;
+    struct ListNode * fast = head;
+    struct ListNode * slow = head;
+    while(fast != NULL && fast->next != NULL){
+        fast = fast->next->next;
+        slow = slow->next;
     }
-    struct ListNode *result = head;
-    for (int i = 0; i < length / 2; i++)
-    {
-        result = result->next;
-    }
-    return result;
+    return slow;
 };
 
 int main(int argc, char const *argv[])
