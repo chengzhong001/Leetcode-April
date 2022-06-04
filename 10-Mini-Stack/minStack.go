@@ -1,12 +1,13 @@
 package main
 
 type MinStack struct {
-    
+    data []int
+    min []int
 }
 
 
 func Constructor() MinStack {
-	return MinStack{}
+    return MinStack{}
 }
 
 
